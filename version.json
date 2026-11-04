@@ -1,7 +1,11 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "date": "2026-11-04",
-  "note": "소독·방역·방제 업종, 장비·장구 대여비, S-Tec 로고 4종, 영상 7편 순서 재생",
-  "html": "releases/S-Tec_short_estimate_v1.2.0.html",
-  "apk": "releases/S-Tec_short_estimate_v1.2.0.apk"
+  "note": "브랜드 로고 하단 배치, 영상 전환 효과(모자이크·디졸브), 영상 9편, 사용 매뉴얼(Word·PPT)",
+  "html": "releases/S-Tec_short_estimate_v1.3.0.html",
+  "apk": "releases/S-Tec_short_estimate_v1.3.0.apk",
+  "manual": {
+    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.docx",
+    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.pptx"
+  }
 }

@@ -2,7 +2,7 @@
 
 <img src="icons/app-icon-512.png" width="96" alt="S-Tec short estimate 앱 아이콘">
 
-**에스텍 단기인력 견적시스템** · v1.2.0
+**에스텍 단기인력 견적시스템** · v1.3.0
 
 보안 · 미화 · 주차 · 시설 · 경호 · 소독 · 방역 · 방제 · 기타 단기 인력 견적을 근무시간과 시급만 넣으면 자동으로 산출합니다. 웹(HTML) 버전과 안드로이드 앱(APK)으로 씁니다.
 
@@ -11,8 +11,11 @@
 | 구분 | 파일 | 주소 |
 |---|---|---|
 | 웹 버전 | [index.html](index.html) | https://sadness500-boop.github.io/S-Ttec-short-estimate/ |
-| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.2.0.html](releases/S-Tec_short_estimate_v1.2.0.html) | |
-| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.2.0.apk](releases/S-Tec_short_estimate_v1.2.0.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.2.0.apk |
+| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.3.0.html](releases/S-Tec_short_estimate_v1.3.0.html) | |
+| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.3.0.apk](releases/S-Tec_short_estimate_v1.3.0.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.3.0.apk |
+
+| 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.docx) | |
+| 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.pptx) | |
 
 - **웹 버전 주소를 열려면** 저장소 Settings › Pages › Branch를 `main` / `/(root)` 로 한 번 켜야 합니다.
 - **안드로이드 설치:** APK 내려받기 → "출처를 알 수 없는 앱 설치 허용" → 설치. Play 프로텍트 경고가 뜨면 "무시하고 설치".
@@ -60,11 +63,12 @@
 2. 업종별 추천 장비·장구 선택, 전체 장비 보기, 직접 추가, 단가·수량 수정
 3. 견적서(금액 한글 표기 · 산출 근거 · 장비 내역) — Excel 저장, HTML 저장, 인쇄/PDF, 표 복사 (앱에서는 저장·공유 창)
 4. 견적 담당 지정(미지정 시 잠금) · 다운로드 QR(웹·APK) · 친구 추천 · 주간/야간/시스템 화면
-5. 메인화면: S-Tec 로고 4종 디자인, 영업 PT 영상 → 미화 · 보안 · 소독·방역·방제 · 주차 · 시설·특수장비 · 행사 경호 영상 순서 재생
+5. 메인화면: 영업 PT 영상 → 미화 · 보안 · 소독·방역·방제 · 주차 · 시설·특수장비 · 행사 경호 · 집회·시위 경호 · 시설관리 영상 9편 순서 재생, 영상이 바뀔 때 모자이크·스르륵(디졸브) 전환 효과(검은 화면 없음), 화면 맨 아래 S-Tec 브랜드 로고 4종
 6. 견적 보관함 (기기 저장)
 
 ## 변경 이력
 
+- **v1.3.0** (2026-11-04) — S-Tec 브랜드 로고 4종을 화면 제일 하단으로 이동, 영상 전환 시 검은 화면 없이 모자이크·디졸브 효과, 영상 2편 추가(집회·시위 경호, 시설관리 — 총 9편), 사용 매뉴얼 Word·PPT
 - **v1.2.0** (2026-11-04) — 상단 S-Tec 글자 로고 삭제, S-Tec 로고 4종 디자인, 소독·방역·방제 업종, 장비·장구 대여비 28종(인터넷 시세 기본값), 영상 7편 순서 재생, GitHub 배포
 - **v1.1.0** (2026-11-04) — 프로그램명·버전 표기, 견적 담당·다운로드 QR·친구 추천·테마, 메인 중앙 탭, 견적서 상호 "에스텍", 에스텍시스템 요율, 안드로이드 앱
 - **v1.0.0** (2026-11-03) — 최초 버전
@@ -72,8 +76,9 @@
 ## 폴더 구성
 
 ```
-index.html      웹 버전 (GitHub Pages 시작 화면, 최신 v1.2.0)
+index.html      웹 버전 (GitHub Pages 시작 화면, 최신 v1.3.0)
 releases/       버전별 HTML · APK
+docs/           사용 매뉴얼 (Word · PPT)
 icons/          앱 아이콘
 version.json    현재 버전
 ```
