@@ -1,11 +1,11 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "date": "2026-11-04",
-  "note": "브랜드 로고 하단 배치, 영상 전환 효과(모자이크·디졸브), 영상 9편, 사용 매뉴얼(Word·PPT)",
-  "html": "releases/S-Tec_short_estimate_v1.3.0.html",
-  "apk": "releases/S-Tec_short_estimate_v1.3.0.apk",
+  "note": "근무 날짜 달력(공휴일·일요일 자동 휴일 계산), 같은 업종 + 조건 추가(남·여·수당·장비·날짜별 인원), 사용 매뉴얼 개정",
+  "html": "releases/S-Tec_short_estimate_v1.4.0.html",
+  "apk": "releases/S-Tec_short_estimate_v1.4.0.apk",
   "manual": {
-    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.docx",
-    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.3.0.pptx"
+    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.docx",
+    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.pptx"
   }
 }

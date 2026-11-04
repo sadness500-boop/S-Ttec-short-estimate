@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0b1757">
-<meta name="app-version" content="1.3.0">
+<meta name="app-version" content="1.4.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="S-Tec short estimate">
@@ -179,6 +179,53 @@ label.f small{font-weight:500}
 .lightbox .box{max-width:min(1100px,96vw)!important;padding:10px!important;background:#0b1757!important}
 .lightbox img{width:100%;height:auto;border-radius:10px;display:block}
 .lightbox .cap{color:#fff;font-weight:800;padding:8px 6px 2px;display:flex;justify-content:space-between;align-items:center}
+/* ---------- calendar (근무 날짜) ---------- */
+.datebtn{display:flex;align-items:center;gap:8px;text-align:left;cursor:pointer;font-weight:800;color:var(--ink);background:var(--panel)}
+.datebtn:hover{border-color:var(--green-500)}
+.datebtn small{font-weight:600;color:var(--muted);margin-left:auto}
+.daysum{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:9px 0;font-size:12.5px;font-weight:700}
+.daysum .dn{padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.daysum .dh{padding:4px 10px;border-radius:999px;background:#fde8e8;color:#c53a3a}
+:root[data-theme="dark"] .daysum .dh{background:#3a1c1c;color:#ff9a8a}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0 8px}
+.cal-head b{font-size:17px}
+.cal-nav{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:18px;font-weight:900;color:var(--ink)}
+.cal-mode{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);margin-bottom:8px}
+.cal-mode button{border:0;background:none;border-radius:9px;padding:7px;font-weight:800;font-size:12.5px;cursor:pointer;color:var(--muted)}
+.cal-mode button.on{background:var(--panel);color:var(--green);box-shadow:0 1px 4px rgba(11,29,63,.16)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-grid .dw{text-align:center;font-size:11.5px;font-weight:800;color:var(--muted);padding:2px 0}
+.cal-grid .dw.su{color:#c53a3a}.cal-grid .dw.sa{color:#2550c4}
+.cday{position:relative;min-height:52px;border:1px solid var(--line);border-radius:10px;background:var(--panel);cursor:pointer;padding:4px 5px;text-align:left;color:var(--ink);font-weight:800;font-size:14px;line-height:1.1;transition:.12s}
+.cday small{display:block;font-size:9.5px;font-weight:600;color:#c53a3a;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cday.out{visibility:hidden}
+.cday.hol{color:#c53a3a}.cday.sat{color:#2550c4}
+.cday.sel{background:#1d7a30;border-color:#1d7a30;color:#fff;box-shadow:0 2px 8px rgba(29,122,48,.3)}
+.cday.sel small{color:#d9f7e1}
+.cday.sel.hol{background:#c53a3a;border-color:#c53a3a}
+.cday.sel.hol small{color:#ffe1e1}
+.cday.xh::after{content:"휴";position:absolute;right:4px;top:3px;font-size:9.5px;font-weight:900;color:#fff;background:#c53a3a;border-radius:5px;padding:0 3px}
+.cday.today{outline:2px dashed var(--accent);outline-offset:-3px}
+.cal-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.cal-sum{margin-top:10px;font-size:13px;font-weight:700}
+.cal-sum .lst{font-weight:500;color:var(--muted);font-size:12px;margin-top:4px;max-height:64px;overflow:auto}
+.cal-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:8px}
+.cal-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+/* ---------- 조건 (같은 업종 여러 조건) ---------- */
+.lgrp{border:1px solid var(--line);border-radius:16px;padding:10px;background:var(--panel2)}
+.lgrp-h{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:2px 4px 8px}
+.lgrp-h .t{font-weight:900;font-size:14.5px}
+.lgrp-h .gsum{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.lgrp-h .gsum b{color:var(--green);font-size:15px}
+.lgrp .lines-in{display:flex;flex-direction:column;gap:8px}
+.cond-add{width:100%;margin-top:8px;border:2px dashed var(--green-line);background:var(--green-soft);color:var(--green);border-radius:12px;padding:10px;font-weight:900;cursor:pointer;font-size:13.5px}
+.cond-add:hover{border-color:#1d7a30}
+.ctag{background:#fff3d6;color:#8a5300;border:1px solid #f3ddb0}
+:root[data-theme="dark"] .ctag{background:#3a2c14;color:#f1c27a;border-color:#6b5222}
+.cond-presets{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+.cond-presets button{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;color:var(--ink)}
+.cond-eq{display:grid;grid-template-columns:1fr 110px 70px 32px;gap:6px;align-items:center;font-size:12.5px;margin-top:6px}
+.cond-eq .in{padding:6px 8px;font-size:12.5px}
 /* ---------- equipment ---------- */
 .eq-box{border:1px dashed var(--line);border-radius:14px;padding:12px;background:var(--panel2)}
 .eq-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:12.5px;font-weight:800;color:var(--accent)}
@@ -348,6 +395,7 @@ table.pt .in{padding:6px 7px;font-size:12.5px;text-align:right}
 .toast{position:fixed;left:50%;bottom:calc(28px + var(--safe-b));transform:translateX(-50%) translateY(20px);background:#0b1757;color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:13px;box-shadow:0 10px 30px rgba(7,20,48,.35);opacity:0;pointer-events:none;transition:.25s;z-index:100;max-width:90vw;text-align:center}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 .modal{position:fixed;inset:0;background:rgba(6,10,40,.58);z-index:90;display:grid;place-items:center;padding:16px}
+.modal .box.wide{max-width:720px}
 .modal .box{background:var(--panel);color:var(--ink);border-radius:16px;max-width:440px;width:100%;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.35);max-height:calc(100vh - 32px);overflow:auto}
 .modal h4{margin:0 0 4px;font-size:18px}
 .modal p.sub{margin:0 0 14px;color:var(--muted);font-size:13.5px}
@@ -565,7 +613,7 @@ footer b{color:#fff}
           <div class="sep"></div>
           <div class="grid g2">
             <label class="f">직무 / 근무구분<input class="in" id="eRole" placeholder="예: 행사경호, 야간순찰"></label>
-            <label class="f">근무일자 <small>시작일</small><input class="in" type="date" id="eDate"></label>
+            <label class="f">근무 날짜 <small>달력에서 월별 날짜 지정</small><button type="button" class="in datebtn" id="eDateBtn">📅 날짜 선택</button></label>
           </div>
           <div class="grid tgrid" style="margin-top:12px">
             <label class="f">시작<input class="in" type="time" id="eStart"></label>
@@ -576,12 +624,12 @@ footer b{color:#fff}
           <div class="grid g3" style="margin-top:12px">
             <label class="f">실근무시간<div class="unit"><input class="in strong" type="number" step="0.25" min="0" id="eHours"><em>h</em></div></label>
             <label class="f">야간(22~06시)<div class="unit"><input class="in" type="number" step="0.25" min="0" id="eNight"><em>h</em></div></label>
-            <label class="f" style="justify-content:flex-end"><span class="check" style="padding:9px 0"><input type="checkbox" id="eHoliday">휴일 근무</span></label>
+            <div class="f" style="justify-content:flex-end"><span>평일 · 휴일 <small>(자동 판정)</small></span><div class="daysum" id="eDaySum"></div></div>
           </div>
           <div class="grid g3" style="margin-top:12px">
             <label class="f">시급<div class="unit"><input class="in strong num" type="number" step="10" min="0" id="eWage"><em>원</em></div></label>
             <label class="f">투입인원<div class="unit"><input class="in strong" type="number" min="1" id="eHeads" style="color:var(--green)"><em>명</em></div></label>
-            <label class="f">근무일수<div class="unit"><input class="in strong" type="number" min="1" id="eDays"><em>일</em></div></label>
+            <label class="f">근무일수 <small>달력 선택</small><div class="unit"><input class="in strong" id="eDays" readonly style="cursor:pointer" title="눌러서 달력에서 날짜 선택"><em>일</em></div></label>
           </div>
           <div class="chips" style="margin-top:8px" id="wageQuick"></div>
           <div id="wageWarn" class="warn hidden" style="margin-top:8px"></div>
@@ -3078,8 +3126,8 @@ break;case"<bookViews":;case"<bookViews>":;case"</bookViews>":break;case"<workbo
    S-Tec short estimate  —  에스텍 단기인력 견적시스템
    Designed & Developed by Rat Rae Choi
    ===================================================================== */
-const APP = Object.freeze({ name:'S-Tec short estimate', ko:'에스텍 단기인력 견적시스템', version:'1.3.0', build:'2026-11-04', author:'Rat Rae Choi', org:'에스텍',
-  webUrl:'https://sadness500-boop.github.io/S-Ttec-short-estimate/', apkUrl:'https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.3.0.apk', repo:'https://github.com/sadness500-boop/S-Ttec-short-estimate' });
+const APP = Object.freeze({ name:'S-Tec short estimate', ko:'에스텍 단기인력 견적시스템', version:'1.4.0', build:'2026-11-04', author:'Rat Rae Choi', org:'에스텍',
+  webUrl:'https://sadness500-boop.github.io/S-Ttec-short-estimate/', apkUrl:'https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.4.0.apk', repo:'https://github.com/sadness500-boop/S-Ttec-short-estimate' });
 const OLD_WEB = 'https://claude.ai/artifact/XPSMAHxGPbc6B4aeowRPCC';
 const CREATOR = 'Rat Rae Choi';
 const IS_APP = !!(window.Capacitor && (typeof window.Capacitor.isNativePlatform!=='function' || window.Capacitor.isNativePlatform()));
@@ -3169,7 +3217,7 @@ function defaultSettings(){
       '방제':{wage:11500, std:'일반직',   a:{guard:0,clean:0,danger:10000,park:0,tech:0,trans:5000,meal:8000,etc:0}},
       '기타':{wage:10320, std:'기타',     a:{guard:0,clean:0,danger:0,park:0,tech:0,trans:5000,meal:8000,etc:0}}
     },
-    eqPrice:{}, eqMargin:true,
+    eqPrice:{}, eqMargin:true, satHol:false,
     company:{name:'에스텍', ceo:'', biz:'', addr:'부산광역시 부산진구 양정동 351-2 대한설비빌딩 2층', tel:'051-897-5280', fax:'051-897-5284', valid:'견적일로부터 30일 / VAT 별도 금액에 부가세 10% 가산'}
   };
 }
@@ -3179,7 +3227,8 @@ function sampleProject(){
   return { name:'2026 부산 연말 문화행사 단기인력 지원', client:'', site:'부산 벡스코 제1전시장', date:todayStr(), manager:'', margin:5, round:'100',
     lines:[
       mkLine({ind:'경호', std:'일반직', role:'행사장 경호·질서유지', date:todayStr(10), start:'08:00', end:'19:00', brk:1, nbrk:0, wage:12000, heads:10, days:2, eq:[eqItem('radio',10),eqItem('handmd',4)]}),
-      mkLine({ind:'보안', std:'감시단속직', role:'야간 시설 경비', date:todayStr(10), start:'19:00', end:'08:00', brk:2, nbrk:2, wage:10320, heads:3, days:2}),
+      mkLine({id:9001, grp:9001, cond:'남성', ind:'보안', std:'감시단속직', role:'야간 시설 경비', date:todayStr(10), start:'19:00', end:'08:00', brk:2, nbrk:2, wage:10320, heads:3, days:2}),
+      mkLine({id:9002, grp:9001, cond:'여성', ind:'보안', std:'감시단속직', role:'야간 시설 경비', date:todayStr(10), start:'19:00', end:'08:00', brk:2, nbrk:2, wage:10320, heads:1, days:2, a:{guard:0,clean:0,danger:0,park:0,tech:0,trans:10000,meal:8000,etc:0}}),
       mkLine({ind:'미화', std:'일반직', role:'행사 전후 청소', date:todayStr(10), start:'06:00', end:'15:00', brk:1, nbrk:0, wage:10320, heads:5, days:2, eq:[eqItem('wscrub',1)]}),
       mkLine({ind:'방역', std:'일반직', role:'행사장 방역 소독', date:todayStr(10), start:'07:00', end:'12:00', brk:0, nbrk:0, wage:11000, heads:2, days:2, eq:[eqItem('ulv',2),eqItem('ppe',2),eqItem('chem',1)]})
     ]};
@@ -3208,29 +3257,58 @@ function spanInfo(start,end){
   for(let m=s;m<e;m++){const t=m%1440; if(t>=1320||t<360) night++;}
   return {span:(e-s)/60, night:night/60};
 }
+/* ---------- 공휴일 (관공서 공휴일·대체공휴일 · 2026~2027) ---------- */
+const KR_HOL={
+ '2026-01-01':'신정','2026-02-16':'설날','2026-02-17':'설날','2026-02-18':'설날','2026-03-01':'삼일절','2026-03-02':'대체공휴일',
+ '2026-05-01':'노동절','2026-05-05':'어린이날','2026-05-24':'부처님오신날','2026-05-25':'대체공휴일','2026-06-03':'지방선거','2026-06-06':'현충일',
+ '2026-07-17':'제헌절','2026-08-15':'광복절','2026-08-17':'대체공휴일','2026-09-24':'추석','2026-09-25':'추석','2026-09-26':'추석',
+ '2026-10-03':'개천절','2026-10-05':'대체공휴일','2026-10-09':'한글날','2026-12-25':'성탄절',
+ '2027-01-01':'신정','2027-02-06':'설날','2027-02-07':'설날','2027-02-08':'설날','2027-02-09':'대체공휴일','2027-03-01':'삼일절',
+ '2027-05-01':'노동절','2027-05-03':'대체공휴일','2027-05-05':'어린이날','2027-05-13':'부처님오신날','2027-06-06':'현충일',
+ '2027-07-17':'제헌절','2027-07-19':'대체공휴일','2027-08-15':'광복절','2027-08-16':'대체공휴일','2027-09-14':'추석','2027-09-15':'추석','2027-09-16':'추석',
+ '2027-10-03':'개천절','2027-10-04':'대체공휴일','2027-10-09':'한글날','2027-10-11':'대체공휴일','2027-12-25':'성탄절','2027-12-27':'대체공휴일'};
+const pad2=n=>String(n).padStart(2,'0');
+const ymd=d=>`${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
+const pdate=s=>{const p=String(s||'').split('-').map(Number); return new Date(p[0],(p[1]||1)-1,p[2]||1);};
+const dow=s=>pdate(s).getDay();
+function holName(d,L){ if(L&&(L.xhol||[]).includes(d)) return '지정 휴일'; if(KR_HOL[d]) return KR_HOL[d]; const w=dow(d); if(w===0) return '일요일'; if(w===6&&S.satHol) return '토요일'; return ''; }
+const isHol=(d,L)=>!!holName(d,L);
+function consecDates(start,n){ const out=[]; const d=pdate(start||todayStr()); for(let i=0;i<Math.max(1,+n||1);i++){ out.push(ymd(d)); d.setDate(d.getDate()+1);} return out; }
+function syncDates(L){ L.dates=[...new Set((L.dates||[]).filter(Boolean))].sort(); L.xhol=[...new Set((L.xhol||[]).filter(d=>L.dates.includes(d)))]; L.days=L.dates.length; if(L.dates[0]) L.date=L.dates[0]; return L; }
+function normLine(L){
+  if(!Array.isArray(L.dates)||!L.dates.length){ L.dates=consecDates(L.date,L.days); if(L.holiday) L.xhol=[...L.dates]; }
+  delete L.holiday; if(!L.xhol) L.xhol=[]; if(L.grp==null) L.grp=L.id; if(L.cond==null) L.cond=''; return syncDates(L);
+}
+function dayParts(L){ const h=(L.dates||[]).filter(d=>isHol(d,L)).length; return {n:(L.dates||[]).length-h, h}; }
+function dateSum(L,max=4){
+  const ds=L.dates||[]; if(!ds.length) return '날짜 미지정'; const runs=[]; let s=ds[0],p=ds[0];
+  for(let i=1;i<=ds.length;i++){ const d=ds[i]; const nx=ymd(new Date(pdate(p).getTime()+864e5)); if(d===nx){p=d;continue;} runs.push(s===p?fmtDate(s):`${fmtDate(s)}~${fmtDate(p)}`); s=p=d; }
+  return runs.length>max? runs.slice(0,max).join(', ')+` 외 ${runs.length-max}구간` : runs.join(', ');
+}
 function mkLine(o){
   const pr=S.presets[o.ind]||S.presets['기타'];
   const L=Object.assign({id:Date.now()+Math.floor(Math.random()*1e6), ind:'보안', std:pr.std, role:'', date:todayStr(), start:'09:00', end:'18:00', brk:1, nbrk:0, hours:8, night:0, holiday:false, wage:pr.wage, heads:1, days:1, etcRate:0, note:'', eq:[], a:Object.assign({},pr.a)}, o);
   if(!o.a) L.a=Object.assign({},(S.presets[L.ind]||pr).a);
   const sp=spanInfo(L.start,L.end);
   if(sp && o.hours==null){ L.hours=Math.max(0,+(sp.span-(+L.brk||0)).toFixed(2)); L.night=Math.max(0,+(sp.night-(+L.nbrk||0)).toFixed(2)); }
-  return L;
+  return normLine(L);
 }
 if(!P) P=sampleProject();
+P.lines.forEach(normLine);
 
 /* ---------- calculation ---------- */
 function insRate(){const i=S.ins;return (i.pension+i.health+i.care+i.employ+i.accident)/100}
 function marginRate(){return Math.max(5,+P.margin||5)/100}
-function calc(L){
+function dayCalc(L,hol){
   const w=+L.wage||0, h=+L.hours||0, nh=Math.min(+L.night||0,h), pr=S.prem;
-  const base=h*w; let ot=0,night=0,hol=0,etcPrem=0;
+  const base=h*w; let ot=0,night=0,holp=0,etcPrem=0;
   if(L.std==='일반직'){
-    if(L.holiday) hol=Math.min(h,8)*w*pr.hol/100+Math.max(h-8,0)*w*pr.holOt/100;
+    if(hol) holp=Math.min(h,8)*w*pr.hol/100+Math.max(h-8,0)*w*pr.holOt/100;   /* 휴일: 8h 이내 50% · 초과 100% */
     else ot=Math.max(h-8,0)*w*pr.ot/100;
     night=nh*w*pr.night/100;
-  } else if(L.std==='감시단속직'){ night=nh*w*pr.night/100; }
+  } else if(L.std==='감시단속직'){ night=nh*w*pr.night/100; }                /* 감시단속직: 휴일·연장 가산 제외 */
   else { etcPrem=base*(+L.etcRate||0)/100; }
-  const legal=ot+night+hol+etcPrem;
+  const legal=ot+night+holp+etcPrem;
   let allow=0,exp=0; ALLOW.forEach(a=>{const v=+(L.a&&L.a[a.k])||0; allow+=v; if(a.exp) exp+=v;});
   const wageSum=base+legal+allow;                       /* (시간×시급) + 각종수당 */
   const insBase=wageSum-(S.excludeExp?exp:0);
@@ -3238,11 +3316,16 @@ function calc(L){
   const ret=S.retire?insBase*S.retireRate/100:0;
   const cost=wageSum+ins+ret;
   const margin=cost*marginRate();                       /* × 관리손익 */
-  const unit=cost+margin, qty=(+L.heads||0)*(+L.days||0);
+  return {base,ot,night,hol:holp,etcPrem,legal,allow,exp,wageSum,ins,ret,cost,margin,unit:cost+margin};
+}
+function calc(L){
+  const dp=dayParts(L), N=dp.n, Hd=dp.h, days=N+Hd, heads=+L.heads||0;
+  const cN=dayCalc(L,false), cH=dayCalc(L,true), out={};
+  Object.keys(cN).forEach(k=>{ out[k]= days? (cN[k]*N+cH[k]*Hd)/days : cN[k]; });   /* 1인·1일 평균 */
+  const qty=heads*days, labor=(cN.unit*N+cH.unit*Hd)*heads;
   const eqDay=(L.eq||[]).reduce((s,e)=>s+(+e.p||0)*(+e.q||0),0);  /* 장비·장구 1일 */
-  const eq=eqDay*(+L.days||0), eqM=S.eqMargin?eq*marginRate():0;
-  const labor=unit*qty;
-  return {base,ot,night,hol,etcPrem,legal,allow,exp,wageSum,ins,ret,cost,margin,unit,qty,labor,eqDay,eq,eqM,amount:labor+eq+eqM};
+  const eq=eqDay*days, eqM=S.eqMargin?eq*marginRate():0;
+  return Object.assign(out,{qty,labor,eqDay,eq,eqM,amount:labor+eq+eqM,nDays:N,hDays:Hd,unitN:cN.unit,unitH:cH.unit,days});
 }
 function totals(){
   const t={base:0,legal:0,allow:0,ins:0,ret:0,margin:0,lmargin:0,eq:0,eqM:0,labor:0,amount:0,md:0,byInd:{}};
@@ -3270,7 +3353,7 @@ document.querySelectorAll('[data-theme-set]').forEach(b=>b.onclick=()=>applyThem
 
 /* ---------- toast / modal / copy ---------- */
 let tt; function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
-function modal(html,bind){$('modal').classList.remove('lightbox');$('modalBox').innerHTML=html;$('modal').classList.remove('hidden');bind&&bind($('modalBox'))}
+function modal(html,bind,wide){$('modal').classList.remove('lightbox');$('modalBox').className='box'+(wide?' wide':'');$('modalBox').innerHTML=html;$('modal').classList.remove('hidden');bind&&bind($('modalBox'))}
 function closeModal(){$('modal').classList.add('hidden');$('modal').classList.remove('lightbox');$('modalBox').innerHTML=''}
 $('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
@@ -3495,14 +3578,14 @@ function renderIndChips(){
 }
 function setInd(ind){ const pr=S.presets[ind]; form.ind=ind; form.std=pr.std; form.wage=pr.wage; form.a=Object.assign({},pr.a); writeForm(); renderPreview(); }
 $('stdSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{form.std=b.dataset.v;writeForm();renderPreview();});
-const FM={eRole:['role','s'],eDate:['date','s'],eStart:['start','s'],eEnd:['end','s'],eBreak:['brk','n'],eNBreak:['nbrk','n'],eHours:['hours','n'],eNight:['night','n'],eWage:['wage','n'],eHeads:['heads','n'],eDays:['days','n'],eEtcRate:['etcRate','n'],eNote:['note','s']};
+const FM={eRole:['role','s'],eStart:['start','s'],eEnd:['end','s'],eBreak:['brk','n'],eNBreak:['nbrk','n'],eHours:['hours','n'],eNight:['night','n'],eWage:['wage','n'],eHeads:['heads','n'],eEtcRate:['etcRate','n'],eNote:['note','s']};
 function writeForm(){
   $('indChips').querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.ind===form.ind));
   $('stdSeg').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===form.std));
   $('stdHint').innerHTML=STD_HINT[form.std];
   $('etcRateWrap').classList.toggle('hidden',form.std!=='기타');
   for(const id in FM) $(id).value=form[FM[id][0]]??'';
-  $('eHoliday').checked=!!form.holiday;
+  writeDates();
   $('allowGrid').querySelectorAll('input').forEach(i=>i.value=form.a[i.dataset.a]||0);
   renderWageQuick(); renderEq();
 }
@@ -3540,29 +3623,38 @@ function renderWageQuick(){
 }
 function recalcTime(){ const sp=spanInfo(form.start,form.end); if(!sp) return; form.hours=Math.max(0,+(sp.span-(+form.brk||0)).toFixed(2)); form.night=Math.max(0,+(sp.night-(+form.nbrk||0)).toFixed(2)); $('eHours').value=form.hours; $('eNight').value=form.night; }
 for(const id in FM){ $(id).addEventListener('input',()=>{ const [k,t]=FM[id]; form[k]=t==='n'?($(id).value===''?'':+$(id).value):$(id).value; if(['eStart','eEnd','eBreak','eNBreak'].includes(id)) recalcTime(); renderPreview(); }); }
-$('eHoliday').addEventListener('change',()=>{form.holiday=$('eHoliday').checked;renderPreview();});
+function writeDates(){
+  syncDates(form); const dp=dayParts(form);
+  $('eDays').value=form.days;
+  $('eDateBtn').innerHTML=`📅 ${form.dates.length?esc(dateSum(form,3)):'날짜 선택'}<small>${form.days}일</small>`;
+  $('eDaySum').innerHTML=`<span class="dn">평일 ${dp.n}일</span><span class="dh">휴일 ${dp.h}일</span>`;
+}
+$('eDateBtn').onclick=()=>openCal(form,()=>{ writeDates(); renderWageQuick(); renderPreview(); });
+$('eDays').onclick=()=>$('eDateBtn').click();
 function wageCheck(L){ const y=(L.date||'').slice(0,4); const mw=MINWAGE[y]||MINWAGE[2026]; return (+L.wage||0)<mw?`${y||'해당'}년 최저임금(${won(mw)}원)보다 낮은 시급입니다.`:''; }
 function renderPreview(){
   const c=calc(form); const ww=wageCheck(form); $('wageWarn').textContent=ww; $('wageWarn').classList.toggle('hidden',!ww);
-  const lt=form.std==='일반직'?(form.holiday?`휴일 ${won(c.hol)} · `:`연장 ${won(c.ot)} · `)+`야간 ${won(c.night)}`:form.std==='감시단속직'?`야간 ${won(c.night)}`:`가산 ${won(c.etcPrem)}`;
+  const lt=form.std==='일반직'?`연장 ${won(c.ot)} · 휴일 ${won(c.hol)} · 야간 ${won(c.night)}`:form.std==='감시단속직'?`야간 ${won(c.night)}`:`가산 ${won(c.etcPrem)}`;
   $('livePreview').innerHTML=`
     <div class="row"><span>기본 인건비 (${form.hours||0}h × ${won(form.wage)}원)</span><b class="num">${won(c.base)}원</b></div>
     <div class="row"><span>법정가산 (${lt})</span><b class="num">${won(c.legal)}원</b></div>
     <div class="row"><span>각종 수당</span><b class="num">${won(c.allow)}원</b></div>
     <div class="row"><span>4대보험 ${(insRate()*100).toFixed(4)}%${S.retire?` + 퇴직 ${S.retireRate}%`:''}</span><b class="num">${won(c.ins+c.ret)}원</b></div>
     <div class="row"><span>관리손익 ${(marginRate()*100).toFixed(1)}%</span><b class="num">${won(c.margin)}원</b></div>
-    <div class="row"><span>1인·1일 단가 × ${form.heads||0}명 × ${form.days||0}일 (인건비)</span><b class="num">${won(c.labor)}원</b></div>
+    ${c.hDays&&c.nDays?`<div class="row"><span>평일 단가 ${won(c.unitN)}원 × ${c.nDays}일 · 휴일 단가 ${won(c.unitH)}원 × ${c.hDays}일</span><b class="num"></b></div>`:''}
+    <div class="row"><span>${c.hDays&&!c.nDays?'휴일 ':''}1인·1일 단가 × ${form.heads||0}명 × ${form.days||0}일 (인건비)</span><b class="num">${won(c.labor)}원</b></div>
     ${c.eq?`<div class="row"><span>장비·장구 ${won(c.eqDay)}원/일 × ${form.days||0}일${S.eqMargin?' + 관리손익':''}</span><b class="num">${won(c.eq+c.eqM)}원</b></div>`:''}
     <div class="big"><span>이 항목 견적금액</span><b class="num">${won(c.amount)}원</b></div>`;
 }
-function freshForm(){ const last=P.lines[P.lines.length-1]; return mkLine({ind:last?last.ind:'보안',date:last?last.date:todayStr(),heads:1,days:1}); }
+function freshForm(){ const last=P.lines[P.lines.length-1]; return mkLine({ind:last?last.ind:'보안',date:last?last.date:todayStr(),dates:last?[...last.dates]:[todayStr()],heads:1}); }
 function submitLine(){
   if(!(+form.hours>0)) return toast('근무시간을 확인하세요');
-  if(!(+form.heads>0)||!(+form.days>0)) return toast('인원과 일수는 1 이상이어야 합니다');
+  syncDates(form); if(!form.dates.length) return toast('달력에서 근무 날짜를 선택하세요');
+  if(!(+form.heads>0)) return toast('인원은 1명 이상이어야 합니다');
   if(!(+form.wage>0)) return toast('시급을 입력하세요');
   const L=JSON.parse(JSON.stringify(form));
   if(editingId!=null){ const i=P.lines.findIndex(x=>x.id===editingId); if(i>-1){L.id=editingId;P.lines[i]=L;} toast('항목을 수정했습니다'); }
-  else { L.id=Date.now(); P.lines.push(L); toast('견적 항목을 추가했습니다'); }
+  else { L.id=Date.now(); L.grp=L.id; L.cond=L.cond||''; P.lines.push(L); toast('견적 항목을 추가했습니다 — 같은 업종의 다른 조건은 "+ 조건 추가"로'); }
   persist(); cancelEdit(); renderAll();
 }
 function editLine(id){
@@ -3572,7 +3664,7 @@ function editLine(id){
   $('btnAdd').querySelector('span').textContent='수정 내용 저장'; $('btnCancelEdit').classList.remove('hidden');
   renderLines(); $('entryCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
-function dupLine(id){ const L=P.lines.find(x=>x.id===id); if(!L) return; const c=JSON.parse(JSON.stringify(L)); c.id=Date.now(); P.lines.splice(P.lines.indexOf(L)+1,0,c); persist(); renderAll(); toast('항목을 복제했습니다'); }
+function dupLine(id){ const L=P.lines.find(x=>x.id===id); if(!L) return; const c=JSON.parse(JSON.stringify(L)); c.id=Date.now(); c.grp=c.id; c.cond=''; P.lines.splice(P.lines.indexOf(L)+1,0,c); persist(); renderAll(); toast('항목을 복제했습니다'); }
 function delLine(id){ P.lines=P.lines.filter(x=>x.id!==id); if(editingId===id) cancelEdit(); persist(); renderAll(); }
 function cancelEdit(){
   editingId=null; form=freshForm(); writeForm(); renderPreview();
@@ -3584,18 +3676,114 @@ function askReset(){ confirmBox('견적 초기화','견적 항목을 모두 삭�
 /* ---------- results ---------- */
 const indColor=k=>(INDUSTRIES.find(x=>x.k===k)||{}).c||'#888';
 function fmtDate(d){ if(!d) return ''; const p=d.split('-'); return `${+p[1]}/${+p[2]}`; }
+function lineCard(L,first){ const c=calc(L); const ww=wageCheck(L);
+  return `<div class="line ${editingId===L.id?'editing':''}">
+    <div class="line-top">${L.cond?`<span class="tag ctag">${esc(L.cond)}</span>`:`<span class="tag" style="background:${indColor(L.ind)};color:#fff;border-color:transparent">${L.ind}</span><span class="tag g">${L.std}</span>`}${c.hDays?`<span class="tag" style="color:#c53a3a">휴일 ${c.hDays}일</span>`:''}
+      <span class="t">${L.cond?`${L.heads}명 · ${won(L.wage)}원`:(esc(L.role)||'(직무 미입력)')}</span>
+      <span class="acts">${L.cond&&!first?`<button class="icon-btn" title="조건 빠른 수정" onclick="openCondById(${L.id})"><svg><use href="#i-edit"/></svg></button>`:`<button class="icon-btn" title="수정" onclick="editLine(${L.id})"><svg><use href="#i-edit"/></svg></button>`}<button class="icon-btn" title="복제(새 항목)" onclick="dupLine(${L.id})"><svg><use href="#i-copy"/></svg></button><button class="icon-btn del" title="삭제" onclick="delLine(${L.id})"><svg><use href="#i-trash"/></svg></button></span></div>
+    <div class="line-meta">📅 ${esc(dateSum(L))} · ${L.days}일${c.hDays?` (평일 ${c.nDays} · 휴일 ${c.hDays})`:''} · ${L.start}~${L.end} (휴게 ${L.brk||0}h) · 실근무 <b>${L.hours}h</b>${+L.night?` · 야간 ${L.night}h`:''} · 시급 ${won(L.wage)}원${ww?` · <span style="color:var(--amber-ink)">⚠ 최저임금 미달</span>`:''}</div>
+    <div class="line-calc num"><div><small>기본 인건비</small><b>${won(c.base)}</b></div><div><small>각종수당·가산</small><b>${won(c.allow+c.legal)}</b></div><div><small>4대보험${S.retire?'·퇴직':''}</small><b>${won(c.ins+c.ret)}</b></div><div><small>관리손익</small><b>${won(c.margin)}</b></div><div class="u"><small>1인·1일 ${c.hDays&&c.nDays?'평균':'단가'}</small><b>${won(c.unit)}</b></div></div>
+    ${c.eq?`<div class="line-eq">🛠 장비·장구 ${(L.eq||[]).map(e=>`${esc(e.n)} ×${e.q}`).join(', ')} — <b>${won(c.eqDay)}원/일 × ${L.days}일${S.eqMargin?' + 관리손익':''} = ${won(c.eq+c.eqM)}원</b></div>`:''}
+    <div class="line-sum"><span>${L.heads}명 × ${L.days}일 = 연 ${c.qty}명${c.eq?' + 장비':''}</span><b class="num">${won(c.amount)}원</b></div></div>`;
+}
+function groups(){ const m=new Map(); P.lines.forEach(L=>{ if(!m.has(L.grp)) m.set(L.grp,[]); m.get(L.grp).push(L); }); return [...m.values()]; }
 function renderLines(){
-  const box=$('lines'); $('lineCount').textContent=`${P.lines.length}건`;
-  if(!P.lines.length){ box.innerHTML='<div class="empty"><b>아직 견적 항목이 없습니다</b><br>왼쪽에서 업종·기준·근무시간을 입력하고 <b>견적 항목 추가</b>를 누르세요.</div>'; return; }
-  box.innerHTML=P.lines.map(L=>{const c=calc(L);const ww=wageCheck(L);
-    return `<div class="line ${editingId===L.id?'editing':''}">
-      <div class="line-top"><span class="tag" style="background:${indColor(L.ind)};color:#fff;border-color:transparent">${L.ind}</span><span class="tag g">${L.std}</span>${L.holiday?'<span class="tag" style="color:#c53a3a">휴일</span>':''}
-        <span class="t">${esc(L.role)||'(직무 미입력)'}</span>
-        <span class="acts"><button class="icon-btn" title="수정" onclick="editLine(${L.id})"><svg><use href="#i-edit"/></svg></button><button class="icon-btn" title="복제" onclick="dupLine(${L.id})"><svg><use href="#i-copy"/></svg></button><button class="icon-btn del" title="삭제" onclick="delLine(${L.id})"><svg><use href="#i-trash"/></svg></button></span></div>
-      <div class="line-meta">${fmtDate(L.date)}부터 ${L.days}일 · ${L.start}~${L.end} (휴게 ${L.brk||0}h) · 실근무 <b>${L.hours}h</b>${+L.night?` · 야간 ${L.night}h`:''} · 시급 ${won(L.wage)}원${ww?` · <span style="color:var(--amber-ink)">⚠ 최저임금 미달</span>`:''}</div>
-      <div class="line-calc num"><div><small>기본 인건비</small><b>${won(c.base)}</b></div><div><small>각종수당·가산</small><b>${won(c.allow+c.legal)}</b></div><div><small>4대보험${S.retire?'·퇴직':''}</small><b>${won(c.ins+c.ret)}</b></div><div><small>관리손익</small><b>${won(c.margin)}</b></div><div class="u"><small>1인·1일 단가</small><b>${won(c.unit)}</b></div></div>
-      ${c.eq?`<div class="line-eq">🛠 장비·장구 ${(L.eq||[]).map(e=>`${esc(e.n)} ×${e.q}`).join(', ')} — <b>${won(c.eqDay)}원/일 × ${L.days}일${S.eqMargin?' + 관리손익':''} = ${won(c.eq+c.eqM)}원</b></div>`:''}
-      <div class="line-sum"><span>${L.heads}명 × ${L.days}일 = 연 ${c.qty}명${c.eq?' + 장비':''}</span><b class="num">${won(c.amount)}원</b></div></div>`;}).join('');
+  const box=$('lines'); const G=groups(); $('lineCount').textContent=`${G.length}개 항목 · ${P.lines.length}개 조건`;
+  if(!P.lines.length){ box.innerHTML='<div class="empty"><b>아직 견적 항목이 없습니다</b><br>왼쪽에서 업종·기준·근무 날짜를 입력하고 <b>견적 항목 추가</b>를 누르세요.</div>'; return; }
+  box.innerHTML=G.map(g=>{ const L0=g[0]; const sum=g.reduce((s,L)=>s+calc(L).amount,0);
+    const solo=g.length===1&&!L0.cond;
+    return `<div class="lgrp">${solo?'':`<div class="lgrp-h"><span class="tag" style="background:${indColor(L0.ind)};color:#fff;border-color:transparent">${L0.ind}</span><span class="tag g">${L0.std}</span><span class="t">${esc(L0.role)||'(직무 미입력)'}</span>${g.length>1?`<span class="gsum">조건 ${g.length}개 합계 <b class="num">${won(sum)}원</b></span>`:''}</div>`}
+      <div class="lines-in">${g.map((L,i)=>lineCard(L,i===0)).join('')}</div>
+      <button class="cond-add" type="button" onclick="addCond(${L0.grp})">＋ 조건 추가 <span style="font-weight:600">(같은 업종 · 인원·남녀·수당·장비·날짜만 바꿔서)</span></button></div>`; }).join('');
+}
+/* ---------- + 조건 추가 / 빠른 수정 ---------- */
+const COND_PRESETS=['남성','여성','주간조','야간조','팀장급','장비 포함','장비 미포함','평일','주말·휴일','추가 인원'];
+function addCond(grp){ const g=P.lines.filter(L=>L.grp===grp); if(!g.length) return; const base=g[g.length-1];
+  const c=JSON.parse(JSON.stringify(base)); c.id=Date.now(); c.grp=grp; if(!g[0].cond) g[0].cond='기본 조건'; c.cond=`조건 ${g.length+1}`;
+  openCond(c,true); }
+function openCondById(id){ const L=P.lines.find(x=>x.id===id); if(L) openCond(JSON.parse(JSON.stringify(L)),false); }
+function openCond(C,isNew){
+  const draw=()=>{ const c=calc(C); $('cdPrev').innerHTML=`📅 ${esc(dateSum(C))} · ${C.days}일${c.hDays?` (휴일 ${c.hDays})`:''} &nbsp;|&nbsp; 1인·1일 ${won(c.unit)}원 × ${C.heads||0}명 × ${C.days}일${c.eq?` + 장비 ${won(c.eq+c.eqM)}원`:''} = <b style="color:var(--green);font-size:16px">${won(c.amount)}원</b>`;
+    $('cdDates').innerHTML=`📅 ${esc(dateSum(C,3))}<small>${C.days}일</small>`; };
+  const eqRows=()=>{ $('cdEq').innerHTML=(C.eq||[]).map((e,i)=>`<div class="cond-eq"><span><b>${esc(e.n)}</b> <small style="color:var(--muted)">/${esc(e.u)}</small></span><div class="unit"><input class="in num" type="number" step="1000" data-ep="${i}" value="${e.p}"><em>원</em></div><input class="in num" type="number" min="0" data-eq="${i}" value="${e.q}"><button class="icon-btn del" type="button" data-ex="${i}"><svg><use href="#i-trash"/></svg></button></div>`).join('')||'<div style="font-size:12px;color:var(--muted)">장비·장구 없음</div>';
+    $('cdEq').querySelectorAll('[data-ep]').forEach(i=>i.oninput=()=>{C.eq[+i.dataset.ep].p=+i.value||0;draw();});
+    $('cdEq').querySelectorAll('[data-eq]').forEach(i=>i.oninput=()=>{C.eq[+i.dataset.eq].q=+i.value||0;draw();});
+    $('cdEq').querySelectorAll('[data-ex]').forEach(b=>b.onclick=()=>{C.eq.splice(+b.dataset.ex,1);eqRows();draw();}); };
+  const opts=EQUIP.filter(e=>e.i.includes(C.ind)).concat(EQUIP.filter(e=>!e.i.includes(C.ind)));
+  modal(`<h4>${isNew?'＋ 조건 추가':'조건 빠른 수정'} <span class="tag">${esc(C.ind)} · ${esc(C.std)}</span></h4><p class="sub">${esc(C.role||'')} — 근무시간(${C.start}~${C.end})은 그대로 두고, 인원·남녀·수당·장비·날짜만 바꿔서 같은 항목에 조건을 추가합니다.</p>
+    <label class="f">조건 이름<input class="in strong" id="cdName" value="${esc(C.cond)}"></label>
+    <div class="cond-presets">${COND_PRESETS.map(p=>`<button type="button" data-cp="${p}">${p}</button>`).join('')}</div>
+    <div class="grid g3" style="margin-top:10px">
+      <label class="f">투입인원<div class="unit"><input class="in strong" type="number" min="1" id="cdHeads" value="${C.heads}"><em>명</em></div></label>
+      <label class="f">시급<div class="unit"><input class="in strong num" type="number" step="10" id="cdWage" value="${C.wage}"><em>원</em></div></label>
+      <label class="f">근무 날짜<button type="button" class="in datebtn" id="cdDates"></button></label>
+    </div>
+    <div class="sec-t" style="margin-top:14px">각종 수당 (1인 · 1일)</div>
+    <div class="grid g4">${ALLOW.map(a=>`<label class="f">${a.n}<div class="unit"><input class="in num" type="number" step="1000" min="0" data-ca="${a.k}" value="${(C.a&&C.a[a.k])||0}"><em>원</em></div></label>`).join('')}</div>
+    <div class="sec-t" style="margin-top:14px">장비 · 장구</div>
+    <div id="cdEq"></div>
+    <div style="display:flex;gap:6px;margin-top:8px"><select class="in" id="cdEqSel"><option value="">＋ 장비·장구 추가 선택</option>${opts.map(e=>`<option value="${e.id}">${esc(e.n)} — ${won(eqPrice(e.id))}원/${esc(e.u)}</option>`).join('')}</select></div>
+    <label class="f" style="margin-top:12px">비고<input class="in" id="cdNote" value="${esc(C.note||'')}" placeholder="예: 여성 인원 탈의실 별도"></label>
+    <div class="preview" style="margin-top:12px;font-size:13px" id="cdPrev"></div>
+    <div class="acts"><button class="btn btn-o" onclick="closeModal()">취소</button><button class="btn btn-g" id="cdSave">${isNew?'＋ 이 조건 추가':'수정 저장'}</button></div>`, md=>{
+      md.querySelector('#cdName').oninput=e=>{C.cond=e.target.value;};
+      md.querySelectorAll('[data-cp]').forEach(b=>b.onclick=()=>{C.cond=b.dataset.cp; md.querySelector('#cdName').value=C.cond;});
+      md.querySelector('#cdHeads').oninput=e=>{C.heads=+e.target.value||0;draw();};
+      md.querySelector('#cdWage').oninput=e=>{C.wage=+e.target.value||0;draw();};
+      md.querySelector('#cdNote').oninput=e=>{C.note=e.target.value;};
+      md.querySelectorAll('[data-ca]').forEach(i=>i.oninput=()=>{C.a[i.dataset.ca]=+i.value||0;draw();});
+      md.querySelector('#cdEqSel').onchange=e=>{ const id=e.target.value; if(!id) return; const x=EQUIP.find(q=>q.id===id); C.eq=C.eq||[]; const ex=C.eq.find(q=>q.id===id); if(ex) ex.q++; else C.eq.push({id,n:x.n,u:x.u,p:eqPrice(id),q:x.perHead?Math.max(1,+C.heads||1):1}); e.target.value=''; eqRows(); draw(); };
+      md.querySelector('#cdDates').onclick=()=>{ const snap=JSON.parse(JSON.stringify(C)); openCal(C,()=>{ reopen(); },()=>{ Object.assign(C,snap); reopen(); }); };
+      md.querySelector('#cdSave').onclick=()=>{ syncDates(C); if(!C.dates.length) return toast('근무 날짜를 선택하세요'); if(!(+C.heads>0)) return toast('인원은 1명 이상');
+        C.cond=(C.cond||'').trim()||'추가 조건';
+        if(isNew){ const g=P.lines.filter(L=>L.grp===C.grp); const last=g[g.length-1]; P.lines.splice(P.lines.indexOf(last)+1,0,C); if(g[0]&&!g[0].cond) g[0].cond='기본 조건'; }
+        else { const i=P.lines.findIndex(x=>x.id===C.id); if(i>-1) P.lines[i]=C; }
+        persist(); closeModal(); renderAll(); toast(isNew?`"${C.cond}" 조건을 추가했습니다`:'조건을 수정했습니다'); };
+      eqRows(); draw();
+    }, true);
+  function reopen(){ openCond(C,isNew); }
+}
+
+/* ---------- 달력 (근무 날짜 지정 · 휴일 자동 판정) ---------- */
+function openCal(T,done,cancel){
+  const sel=new Set(T.dates||[]), xh=new Set(T.xhol||[]); let mode='pick';
+  let cur=pdate((T.dates&&T.dates[0])||todayStr()); cur.setDate(1);
+  const tmp={xhol:[]};
+  const draw=md=>{
+    tmp.xhol=[...xh];
+    const y=cur.getFullYear(), m=cur.getMonth(); md.querySelector('#calTitle').textContent=`${y}년 ${m+1}월`;
+    const first=new Date(y,m,1).getDay(), last=new Date(y,m+1,0).getDate(); let h='';
+    ['일','월','화','수','목','금','토'].forEach((d,i)=>h+=`<div class="dw ${i===0?'su':i===6?'sa':''}">${d}</div>`);
+    for(let i=0;i<first;i++) h+='<div class="cday out"></div>';
+    for(let d=1;d<=last;d++){ const ds=`${y}-${pad2(m+1)}-${pad2(d)}`; const hn=holName(ds,tmp); const w=new Date(y,m,d).getDay();
+      h+=`<button type="button" class="cday ${hn?'hol':''} ${!hn&&w===6?'sat':''} ${sel.has(ds)?'sel':''} ${xh.has(ds)?'xh':''} ${ds===todayStr()?'today':''}" data-d="${ds}">${d}<small>${hn&&hn!=='일요일'?esc(hn):''}</small></button>`; }
+    md.querySelector('#calGrid').innerHTML=h;
+    md.querySelectorAll('.cday[data-d]').forEach(b=>b.onclick=()=>{ const ds=b.dataset.d;
+      if(mode==='pick'){ sel.has(ds)?sel.delete(ds):sel.add(ds); } else { if(xh.has(ds)) xh.delete(ds); else { xh.add(ds); sel.add(ds); } } draw(md); });
+    const all=[...sel].sort(); const hc=all.filter(d=>isHol(d,{xhol:[...xh]})).length;
+    md.querySelector('#calSum').innerHTML=`선택 <b style="color:var(--green)">${all.length}일</b> — 평일 ${all.length-hc}일 · <span style="color:#c53a3a">휴일 ${hc}일</span> <span style="font-weight:500;color:var(--muted)">(휴일은 일반직 휴일가산 자동 적용)</span><div class="lst">${all.map(d=>`${fmtDate(d)}${isHol(d,{xhol:[...xh]})?'(휴)':''}`).join(' · ')||'선택한 날짜가 없습니다'}</div>`;
+    md.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('on',b.dataset.mode===mode));
+  };
+  modal(`<h4>📅 근무 날짜 선택</h4><p class="sub">월을 넘기며 근무하는 날짜를 누르세요. 일요일·공휴일·대체공휴일은 <b style="color:#c53a3a">휴일</b>로 자동 계산됩니다${S.satHol?' (토요일 포함)':''}.</p>
+    <div class="cal-mode"><button type="button" data-mode="pick">날짜 선택</button><button type="button" data-mode="hol">휴일로 지정 (회사 휴무일 등)</button></div>
+    <div class="cal-head"><button type="button" class="cal-nav" id="calPrev">‹</button><b id="calTitle"></b><button type="button" class="cal-nav" id="calNext">›</button></div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend"><span><i style="background:#1d7a30"></i>선택(평일)</span><span><i style="background:#c53a3a"></i>선택(휴일)</span><span><i style="border:1px solid #c53a3a"></i>공휴일·일요일</span><span><i style="border:2px dashed #1530a0"></i>오늘</span></div>
+    <div class="cal-quick"><button type="button" class="btn btn-o btn-sm" data-q="wk">이 달 평일 전체</button><button type="button" class="btn btn-o btn-sm" data-q="we">이 달 주말·휴일</button><button type="button" class="btn btn-o btn-sm" data-q="all">이 달 전체</button><button type="button" class="btn btn-o btn-sm" data-q="clrm">이 달 해제</button><button type="button" class="btn btn-x btn-sm" data-q="clr">모두 해제</button></div>
+    <div class="cal-sum" id="calSum"></div>
+    <div class="acts"><button class="btn btn-o" id="calCancel">취소</button><button class="btn btn-g" id="calOk">선택 완료</button></div>`, md=>{
+      md.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;draw(md);});
+      md.querySelector('#calPrev').onclick=()=>{cur.setMonth(cur.getMonth()-1);draw(md);};
+      md.querySelector('#calNext').onclick=()=>{cur.setMonth(cur.getMonth()+1);draw(md);};
+      md.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ const y=cur.getFullYear(), m=cur.getMonth(), last=new Date(y,m+1,0).getDate(); const q=b.dataset.q;
+        if(q==='clr'){ sel.clear(); xh.clear(); }
+        for(let d=1;d<=last;d++){ const ds=`${y}-${pad2(m+1)}-${pad2(d)}`; const hol=isHol(ds,{xhol:[...xh]})||new Date(y,m,d).getDay()===6;
+          if(q==='wk'&&!hol) sel.add(ds); if(q==='we'&&hol) sel.add(ds); if(q==='all') sel.add(ds); if(q==='clrm'){ sel.delete(ds); xh.delete(ds);} }
+        draw(md); });
+      md.querySelector('#calCancel').onclick=()=>{ closeModal(); if(cancel) cancel(); };
+      md.querySelector('#calOk').onclick=()=>{ if(!sel.size) return toast('근무 날짜를 하나 이상 선택하세요'); T.dates=[...sel]; T.xhol=[...xh]; syncDates(T); closeModal(); done&&done(); toast(`${T.days}일 선택 (휴일 ${dayParts(T).h}일)`); };
+      draw(md);
+    }, true);
 }
 function renderTotals(){
   const t=totals();
@@ -3629,7 +3817,7 @@ function renderAll(){ renderLines(); renderTotals(); renderRateLine(); if(form) 
 function docHTML(){
   const t=totals(), C=S.company;
   const no='SE-'+(P.date||todayStr()).replace(/-/g,'')+'-'+String(P.lines.length).padStart(2,'0');
-  const rows=P.lines.map((L,i)=>{const c=calc(L);return `<tr><td class="c">${i+1}</td><td class="c">${L.ind}</td><td class="c">${L.std}</td><td class="l">${esc(L.role)}<br><span style="color:#777;font-size:10.5px">${fmtDate(L.date)}~ ${L.start}-${L.end}${L.holiday?' · 휴일':''}</span></td>
+  const rows=P.lines.map((L,i)=>{const c=calc(L);return `<tr><td class="c">${i+1}</td><td class="c">${L.ind}</td><td class="c">${L.std}</td><td class="l">${esc(L.role)}${L.cond?` <b style="color:#8a5300">[${esc(L.cond)}]</b>`:''}<br><span style="color:#777;font-size:10.5px">${esc(dateSum(L,3))} · ${L.start}-${L.end}${c.hDays?` · 휴일 ${c.hDays}일`:''}</span></td>
     <td>${L.hours}h</td><td>${won(L.wage)}</td><td>${won(c.base)}</td><td>${won(c.allow+c.legal)}</td><td>${won(c.ins+c.ret)}</td><td>${won(c.margin)}</td><td><b>${won(c.unit)}</b></td><td class="c">${L.heads}×${L.days}</td><td><b>${won(c.labor)}</b></td></tr>${c.eq?`<tr class="eqr"><td></td><td colspan="11" class="l" style="font-size:11px;color:#245">└ 장비·장구: ${(L.eq||[]).map(e=>`${esc(e.n)} ${won(e.p)}원×${e.q}${esc(e.u)}`).join(' · ')} → 1일 ${won(c.eqDay)}원 × ${L.days}일${S.eqMargin?` + 관리손익 ${won(c.eqM)}원`:''}</td><td><b>${won(c.eq+c.eqM)}</b></td></tr>`:''}`;}).join('');
   const byInd=Object.entries(t.byInd).map(([k,v])=>`${k} ${won(v)}원`).join(' · ');
   return `<div class="doc" id="doc"><div class="doc-band"></div>
@@ -3655,6 +3843,7 @@ function docHTML(){
     <div class="basis">
       <p><b>■ 산출 근거</b> : [ (근무시간 × 시급) + 각종수당 ] × (1 + 4대보험 ${(insRate()*100).toFixed(4)}%${S.retire?` + 퇴직충당 ${S.retireRate}%`:''}) × (1 + 관리손익 ${(marginRate()*100).toFixed(1)}%) × 인원 × 일수</p>
       <p>■ 법정가산 : 일반직 — 연장 ${S.prem.ot}% · 야간 ${S.prem.night}% · 휴일 ${S.prem.hol}%(8h 초과 ${S.prem.holOt}%) / 감시단속직 — 야간 ${S.prem.night}%</p>
+      <p>■ 휴일 판정 : 근무 날짜 중 일요일 · 관공서 공휴일 · 대체공휴일${S.satHol?' · 토요일':''} · 지정 휴일은 휴일 단가(휴일가산)로 별도 계산</p>
       <p>■ 4대보험(사업주, ${PROFILES[S.profile].n} 요율) : 국민연금 ${S.ins.pension}% · 건강 ${S.ins.health}% · 장기요양 ${S.ins.care}% · 고용 ${S.ins.employ}% · 산재 ${S.ins.accident}%${S.excludeExp?' (교통비·식대 산정 제외)':''}</p>
       ${t.eq?`<p>■ 장비·장구 대여비 : 1일 단가 × 수량 × 근무일수${S.eqMargin?' × (1 + 관리손익)':''} (4대보험 비적용, 운반·설치비 별도 협의)</p>`:''}
       ${byInd?`<p>■ 업종별 금액 : ${byInd}</p>`:''}
@@ -3686,8 +3875,8 @@ function sheetRows(){
   const t=totals(), C=S.company, E=n=>Array(n).fill('');
   const rows=[['에스텍 단기인력 견적서 (S-Tec short estimate v'+APP.version+')'],['견적명',P.name],['고객사',P.client,'현장',P.site],['견적일자',P.date,'담당',P.manager],['발신',C.name,'연락처',C.tel],
     ['관리손익률',(marginRate()*100)+'%','4대보험('+PROFILES[S.profile].n+')',(insRate()*100).toFixed(4)+'%'],[],
-    ['No','업종','계산기준','직무','근무일자','시작','종료','휴게(h)','실근무(h)','야간(h)','휴일','시급','기본인건비','약정수당','법정가산','4대보험','퇴직충당','관리손익','1인1일단가','인원','일수','인건비','장비·장구(1일)','장비·장구 계','장비 관리손익','금액','비고']];
-  P.lines.forEach((L,i)=>{const c=calc(L);rows.push([i+1,L.ind,L.std,L.role,L.date,L.start,L.end,+L.brk||0,+L.hours,+L.night||0,L.holiday?'Y':'',+L.wage,Math.round(c.base),Math.round(c.allow),Math.round(c.legal),Math.round(c.ins),Math.round(c.ret),Math.round(c.margin),Math.round(c.unit),+L.heads,+L.days,Math.round(c.labor),Math.round(c.eqDay),Math.round(c.eq),Math.round(c.eqM),Math.round(c.amount),L.note||'']);
+    ['No','업종','계산기준','직무 [조건]','근무날짜','시작','종료','휴게(h)','실근무(h)','야간(h)','휴일일수','시급','기본인건비','약정수당','법정가산','4대보험','퇴직충당','관리손익','1인1일단가','인원','일수','인건비','장비·장구(1일)','장비·장구 계','장비 관리손익','금액','비고']];
+  P.lines.forEach((L,i)=>{const c=calc(L);rows.push([i+1,L.ind,L.std,L.role+(L.cond?' ['+L.cond+']':''),(L.dates||[]).join(', '),L.start,L.end,+L.brk||0,+L.hours,+L.night||0,c.hDays,+L.wage,Math.round(c.base),Math.round(c.allow),Math.round(c.legal),Math.round(c.ins),Math.round(c.ret),Math.round(c.margin),Math.round(c.unit),+L.heads,+L.days,Math.round(c.labor),Math.round(c.eqDay),Math.round(c.eq),Math.round(c.eqM),Math.round(c.amount),L.note||'']);
     (L.eq||[]).forEach(e=>{ const r=Array(27).fill(''); r[1]='└ 장비·장구'; r[3]=e.n+' ('+e.u+')'; r[11]=+e.p; r[19]=+e.q; r[20]=+L.days; r[22]=Math.round(e.p*e.q); r[23]=Math.round(e.p*e.q*(+L.days||0)); rows.push(r); });});
   rows.push([],[...E(24),'인건비',Math.round(t.labor)],[...E(24),'장비·장구',Math.round(t.eq+t.eqM)],[...E(24),'소계',t.supplyRaw],[...E(24),'절사',-t.cut],[...E(24),'공급가액',t.supply],[...E(24),'VAT',t.vat],[...E(24),'총 합계',t.total],[],
     ['산출식: [(시간×시급)+각종수당] × (1+4대보험) × (1+관리손익) × 인원 × 일수'],[APP.name+' v'+APP.version+' / Designed & Developed by '+CREATOR]);
@@ -3727,7 +3916,7 @@ function openSaved(){
     <div class="saved-list">${list.length?list.map((x,i)=>`<div class="saved-item"><div><b>${esc(x.p.name)}</b><small>${x.p.date} · ${x.p.lines.length}건 · ${won(x.total)}원</small></div><button class="btn btn-g btn-sm" onclick="loadSaved(${i})">열기</button><button class="icon-btn del" onclick="delSaved(${i})"><svg><use href="#i-trash"/></svg></button></div>`).join(''):'<div class="empty" style="padding:20px">저장된 견적이 없습니다</div>'}</div>
     <div class="acts"><button class="btn btn-o" onclick="closeModal()">닫기</button><button class="btn btn-n" onclick="saveCurrent();openSaved()">현재 견적 저장</button></div>`);
 }
-function loadSaved(i){ const x=getSaved()[i]; if(!x) return; P=JSON.parse(JSON.stringify(x.p)); persist(); fillProject(); closeModal(); cancelEdit(); go('estimate','force'); toast('견적을 불러왔습니다'); }
+function loadSaved(i){ const x=getSaved()[i]; if(!x) return; P=JSON.parse(JSON.stringify(x.p)); P.lines.forEach(normLine); persist(); fillProject(); closeModal(); cancelEdit(); go('estimate','force'); toast('견적을 불러왔습니다'); }
 function delSaved(i){ const l=getSaved(); l.splice(i,1); store(K.saved,l); openSaved(); }
 
 /* ---------- settings ---------- */
@@ -3737,6 +3926,7 @@ function renderSettings(){
   $('insGrid').innerHTML=INS.map(([k,n])=>`<label class="f">${n}<div class="unit"><input class="in" type="number" step="0.001" data-ins="${k}" value="${S.ins[k]}"><em>%</em></div></label>`).join('');
   $('profileNote').innerHTML=PROFILES[S.profile].note;
   $('premGrid').innerHTML=PREM.map(([k,n])=>`<label class="f">${n}<div class="unit"><input class="in" type="number" step="5" data-prem="${k}" value="${S.prem[k]}"><em>%</em></div></label>`).join('')+
+    `<label class="check" style="grid-column:1/-1"><input type="checkbox" id="sSatHol" ${S.satHol?'checked':''}>토요일 근무도 휴일로 계산 <span style="font-weight:500;color:var(--muted)">(기본: 일요일·공휴일·대체공휴일만 휴일)</span></label>`+
     `<div class="hint" style="grid-column:1/-1">최저임금: <b>2026년 ${won(MINWAGE[2026])}원</b> · <b>2027년 ${won(MINWAGE[2027])}원</b> (근무일자 연도 기준으로 미달 여부를 표시)</div>`;
   $('presetTable').innerHTML=`<tr><th>업종</th><th>기준</th><th>시급</th>${ALLOW.map(a=>`<th>${a.n.replace('·기술','')}</th>`).join('')}</tr>`+
     INDUSTRIES.map(x=>{const p=S.presets[x.k];return `<tr><td><span style="color:${x.c}">●</span> ${x.k}</td><td><select class="in" style="text-align:left;min-width:92px" data-ps="${x.k}">${['감시단속직','일반직','기타'].map(s=>`<option ${p.std===s?'selected':''}>${s}</option>`).join('')}</select></td><td><input class="in" style="min-width:78px" type="number" data-pw="${x.k}" value="${p.wage}"></td>${ALLOW.map(a=>`<td><input class="in" style="min-width:66px" type="number" step="1000" data-pa="${x.k}|${a.k}" value="${p.a[a.k]||0}"></td>`).join('')}</tr>`}).join('');
@@ -3746,12 +3936,13 @@ function renderSettings(){
   ['Name','Ceo','Biz','Addr','Tel','Fax','Valid'].forEach(k=>$('c'+k).value=S.company[k.toLowerCase()]||'');
   $('uWeb').value=S.urls.web||''; $('uApk').value=S.urls.apk||'';
   $('about').innerHTML=`<b>${APP.name}</b> <span class="tag">v${APP.version}</span> · 빌드 ${APP.build}<br>${APP.ko} · ${IS_APP?'안드로이드 앱':'웹(HTML) 버전'}<br>
-    <span style="color:var(--muted)">v1.3.0 (2026-11-04) S-Tec 브랜드 로고 4종을 화면 제일 하단으로 이동, 영상 전환 시 검은 화면 없이 모자이크·스르륵(디졸브) 전환 효과, 영상 2편 추가(집회·시위 경호, 시설관리 — 총 9편), 사용 매뉴얼(Word·PPT)<br>v1.2.0 (2026-11-04) 상단 S-Tec 글자 로고 삭제, S-Tec 로고 4종(월 사인·쇼케이스·가든 사인·일렉트릭 큐브) 디자인 반영, 업종 소독·방역·방제 추가, 장비·장구 대여비(경호·미화 탑승식·소독방역방제·지게차·사다리차·스카이차 등 28종, 인터넷 시세 기본값) 선택 산정, 메인 영상 다음 6개 영상 순서 재생, GitHub 저장소 배포<br>v1.1.0 (2026-11-04) 프로그램명 S-Tec short estimate·버전 표기, 상단 견적 담당(미지정 시 잠금)·다운로드 QR·친구 추천·주간/야간/시스템 화면, 앱 아이콘을 누르면 메인, 견적 작성·견적서·요율 설정을 메인 중앙 탭으로 이동, S-Tec 로고·큐브 디자인, 견적서 상호 "에스텍", 에스텍시스템 요율 기본 적용, 안드로이드 앱(APK)<br>v1.0.0 (2026-11-03) 최초 버전 — 시간·시급·각종수당·4대보험·관리손익 견적 산출, 업종·비용 계산 기준, 견적서·Excel</span><br>
+    <span style="color:var(--muted)">v1.4.0 (2026-11-04) 근무 날짜를 달력에서 월별로 직접 지정(일요일·공휴일·대체공휴일 자동 휴일 판정 → 일반직 휴일가산 자동 계산, 회사 지정 휴일·토요일 휴일 옵션), 같은 업종 항목에 "+ 조건 추가"(남·여, 인원, 수당, 장비, 날짜별 차이를 빠르게 추가), 사용 매뉴얼 개정<br>v1.3.0 (2026-11-04) S-Tec 브랜드 로고 4종을 화면 제일 하단으로 이동, 영상 전환 시 검은 화면 없이 모자이크·스르륵(디졸브) 전환 효과, 영상 2편 추가(집회·시위 경호, 시설관리 — 총 9편), 사용 매뉴얼(Word·PPT)<br>v1.2.0 (2026-11-04) 상단 S-Tec 글자 로고 삭제, S-Tec 로고 4종(월 사인·쇼케이스·가든 사인·일렉트릭 큐브) 디자인 반영, 업종 소독·방역·방제 추가, 장비·장구 대여비(경호·미화 탑승식·소독방역방제·지게차·사다리차·스카이차 등 28종, 인터넷 시세 기본값) 선택 산정, 메인 영상 다음 6개 영상 순서 재생, GitHub 저장소 배포<br>v1.1.0 (2026-11-04) 프로그램명 S-Tec short estimate·버전 표기, 상단 견적 담당(미지정 시 잠금)·다운로드 QR·친구 추천·주간/야간/시스템 화면, 앱 아이콘을 누르면 메인, 견적 작성·견적서·요율 설정을 메인 중앙 탭으로 이동, S-Tec 로고·큐브 디자인, 견적서 상호 "에스텍", 에스텍시스템 요율 기본 적용, 안드로이드 앱(APK)<br>v1.0.0 (2026-11-03) 최초 버전 — 시간·시급·각종수당·4대보험·관리손익 견적 산출, 업종·비용 계산 기준, 견적서·Excel</span><br>
     <b style="font-family:Roboto,sans-serif;font-style:italic">Designed &amp; Developed by ${CREATOR}</b>`;
   updInsSum(); bindSettings();
 }
 function updInsSum(){ $('insSum').textContent=`합계 ${(insRate()*100).toFixed(4)}%`; $('fAddr').textContent=`${S.company.addr} · TEL ${S.company.tel}`; }
 function bindSettings(){
+  const sh=$('sSatHol'); if(sh) sh.onchange=()=>{S.satHol=sh.checked;afterSet();};
   document.querySelectorAll('[data-ins]').forEach(i=>i.oninput=()=>{S.ins[i.dataset.ins]=+i.value||0; if(S.profile!=='custom'){S.profile='custom'; $('profiles').querySelectorAll('[data-pf]').forEach(b=>b.classList.toggle('on',b.dataset.pf==='custom')); $('profileNote').innerHTML=PROFILES.custom.note;} afterSet();});
   document.querySelectorAll('[data-prem]').forEach(i=>i.oninput=()=>{S.prem[i.dataset.prem]=+i.value||0;afterSet()});
   document.querySelectorAll('[data-eqp]').forEach(i=>i.oninput=()=>{S.eqPrice[i.dataset.eqp]=+i.value||0;persist();if(form)renderEq();});
