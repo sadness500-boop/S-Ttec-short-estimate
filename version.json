@@ -5,8 +5,8 @@
   "html": "releases/S-Tec_short_estimate_v1.5.0.html",
   "apk": "releases/S-Tec_short_estimate_v1.5.0.apk",
   "manual": {
-    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.docx",
-    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.pptx",
+    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx",
+    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx",
     "admin_docx": "docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.0.docx"
   },
   "server_sql": "server/supabase_setup.sql",

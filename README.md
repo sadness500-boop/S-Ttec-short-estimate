@@ -14,8 +14,8 @@
 | 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.0.html](releases/S-Tec_short_estimate_v1.5.0.html) | |
 | 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.0.apk](releases/S-Tec_short_estimate_v1.5.0.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.0.apk |
 
-| 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.docx) | |
-| 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.4.0.pptx) | |
+| 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx) | |
+| 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx) | |
 | 제작자 관리 사용매뉴얼 | [docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.0.docx](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.0.docx) | |
 
 - **웹 버전 주소를 열려면** 저장소 Settings › Pages › Branch를 `main` / `/(root)` 로 한 번 켜야 합니다.
