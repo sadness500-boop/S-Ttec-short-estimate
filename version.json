@@ -1,9 +1,9 @@
 {
-  "version": "1.5.0",
-  "date": "2026-11-05",
-  "note": "제작자 관리 기능 — 로그인·가입 승인·접속 차단·사용기한·임시 비밀번호·강제 로그아웃·접속기록·기기 관리·앱 전체 잠금, 하나의 아이디로 여러 기기 기록 동기화",
-  "html": "releases/S-Tec_short_estimate_v1.5.0.html",
-  "apk": "releases/S-Tec_short_estimate_v1.5.0.apk",
+  "version": "1.5.1",
+  "date": "2026-11-18",
+  "note": "메인 영상 11편으로 교체 (영업 PT 2 · 보안 현장 통제 · 설비 점검 추가) · 에스텍 통합 로그인(SSO) 연결 반영",
+  "html": "releases/S-Tec_short_estimate_v1.5.1.html",
+  "apk": "releases/S-Tec_short_estimate_v1.5.1.apk",
   "manual": {
     "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx",
     "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx",

@@ -2,7 +2,7 @@
 
 <img src="icons/app-icon-512.png" width="96" alt="S-Tec short estimate 앱 아이콘">
 
-**에스텍 단기인력 견적시스템** · v1.5.0
+**에스텍 단기인력 견적시스템** · v1.5.1
 
 보안 · 미화 · 주차 · 시설 · 경호 · 소독 · 방역 · 방제 · 기타 단기 인력 견적을 근무시간과 시급만 넣으면 자동으로 산출합니다. 웹(HTML) 버전과 안드로이드 앱(APK)으로 씁니다.
 
@@ -11,8 +11,8 @@
 | 구분 | 파일 | 주소 |
 |---|---|---|
 | 웹 버전 | [index.html](index.html) | https://sadness500-boop.github.io/S-Ttec-short-estimate/ |
-| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.0.html](releases/S-Tec_short_estimate_v1.5.0.html) | |
-| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.0.apk](releases/S-Tec_short_estimate_v1.5.0.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.0.apk |
+| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.1.html](releases/S-Tec_short_estimate_v1.5.1.html) | |
+| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.1.apk](releases/S-Tec_short_estimate_v1.5.1.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.1.apk |
 
 | 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx) | |
 | 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx) | |
@@ -77,12 +77,13 @@
 4. 업종별 추천 장비·장구 선택, 전체 장비 보기, 직접 추가, 단가·수량 수정
 5. 견적서(금액 한글 표기 · 산출 근거 · 장비 내역) — Excel 저장, HTML 저장, 인쇄/PDF, 표 복사 (앱에서는 저장·공유 창)
 6. 견적 담당 지정(미지정 시 잠금) · 다운로드 QR(웹·APK) · 친구 추천 · 주간/야간/시스템 화면
-7. 메인화면: 영업 PT 영상 → 미화 · 보안 · 소독·방역·방제 · 주차 · 시설·특수장비 · 행사 경호 · 집회·시위 경호 · 시설관리 영상 9편 순서 재생, 영상이 바뀔 때 모자이크·스르륵(디졸브) 전환 효과(검은 화면 없음), 화면 맨 아래 S-Tec 브랜드 로고 4종
+7. 메인화면: 영업 PT → 영업 PT 2 · 미화 · 주차 · 보안 현장 통제 · 설비 점검 · 시설·특수장비 · 시설관리 · 행사 경호 · 집회·시위 경호 · 소독·방역·방제 영상 11편 순서 재생, 영상이 바뀔 때 모자이크·스르륵(디졸브) 전환 효과(검은 화면 없음), 화면 맨 아래 S-Tec 브랜드 로고 4종
 8. 견적 보관함 (로그인 시 계정에 저장 · 여러 기기 동기화)
 9. 제작자 관리 — 로그인 · 승인 · 차단 · 사용기한 · 임시 비밀번호 · 접속기록 · 기기 관리 · 앱 전체 잠금
 
 ## 변경 이력
 
+- **v1.5.1** (2026-11-18) — 메인 영상을 새로 받은 11편으로 교체(H.264로 다시 인코딩해 PC·안드로이드 모두 재생), 에스텍 통합 로그인(SSO) 연결 내용 포함, 안드로이드 APK v1.5.1
 - **v1.5.0** (2026-11-04) — 제작자 관리 기능: 로그인·가입 승인제, 접속 차단/해제, 사용기한, 임시 비밀번호(비밀번호는 암호화 저장), 강제 로그아웃, 접속기록·기기 관리·관리작업 기록, 앱 전체 잠금, 하나의 아이디로 여러 기기 기록 동기화 (안드로이드 APK는 v1.4.0 유지 — 서명 키로 재빌드 필요)
 - **v1.4.0** (2026-11-04) — 근무 날짜를 달력에서 월별로 직접 지정(일요일·공휴일·대체공휴일 자동 휴일 → 일반직 휴일가산 자동, 회사 지정 휴일·토요일 휴일 옵션), 같은 업종 항목에 "＋ 조건 추가"(남·여, 인원, 수당, 장비, 날짜별 인원 차이), 사용 매뉴얼 개정
 - **v1.3.0** (2026-11-04) — S-Tec 브랜드 로고 4종을 화면 제일 하단으로 이동, 영상 전환 시 검은 화면 없이 모자이크·디졸브 효과, 영상 2편 추가(집회·시위 경호, 시설관리 — 총 9편), 사용 매뉴얼 Word·PPT
