@@ -2,7 +2,7 @@
 
 <img src="icons/app-icon-512.png" width="96" alt="S-Tec short estimate 앱 아이콘">
 
-**에스텍 단기인력 견적시스템** · v1.5.1
+**에스텍 단기인력 견적시스템** · v1.5.2
 
 보안 · 미화 · 주차 · 시설 · 경호 · 소독 · 방역 · 방제 · 기타 단기 인력 견적을 근무시간과 시급만 넣으면 자동으로 산출합니다. 웹(HTML) 버전과 안드로이드 앱(APK)으로 씁니다.
 
@@ -11,28 +11,32 @@
 | 구분 | 파일 | 주소 |
 |---|---|---|
 | 웹 버전 | [index.html](index.html) | https://sadness500-boop.github.io/S-Ttec-short-estimate/ |
-| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.1.html](releases/S-Tec_short_estimate_v1.5.1.html) | |
-| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.1.apk](releases/S-Tec_short_estimate_v1.5.1.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.1.apk |
+| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.2.html](releases/S-Tec_short_estimate_v1.5.2.html) | |
+| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.2.apk](releases/S-Tec_short_estimate_v1.5.2.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.2.apk |
 
-| 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx) | |
-| 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx) | |
-| 제작자 관리 사용매뉴얼 | [docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.0.docx](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.0.docx) | |
+| 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx) | |
+| 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx) | |
+| 제작자 관리 사용매뉴얼 | [docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.docx](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.docx) | |
+| 사용 매뉴얼 (PDF) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pdf](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pdf) · [슬라이드 PDF](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2_슬라이드.pdf) | |
+| 제작자 관리 사용매뉴얼 (PDF) | [docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf) | |
 
 - **웹 버전 주소를 열려면** 저장소 Settings › Pages › Branch를 `main` / `/(root)` 로 한 번 켜야 합니다.
 - **안드로이드 설치:** APK 내려받기 → "출처를 알 수 없는 앱 설치 허용" → 설치. Play 프로텍트 경고가 뜨면 "무시하고 설치".
 - 앱 패키지명은 `kr.stecbest.shortestimate` 이며, 같은 서명 키로 만들어 새 버전을 지우지 않고 덮어 설치할 수 있습니다. 서명 키는 보안상 저장소에 올리지 않습니다(제작자 보관).
-- HTML 한 파일에 영상·로고·Excel·QR 기능이 모두 들어 있어 인터넷 없이도 열립니다(글꼴만 온라인).
+- HTML 한 파일에 영상·로고·Excel·QR 기능이 모두 들어 있습니다(통합 로그인 확인에는 인터넷 필요, 끊겨도 24시간까지 사용).
 
-## 제작자 관리 (v1.5.0 신규)
+## 제작자 관리 · 에스텍 통합 로그인
 
-로그인 · 사용 권한 · 관리자 페이지 · 여러 기기 동기화. 서버는 무료 **Supabase**를 씁니다.
+로그인 · 사용 권한 · 관리자 페이지 · 여러 기기 동기화. **에스텍 통합 로그인(SSO)** — 메인 프로그램(S-Tec Operations and Sales Integrated Management System)과 8개 프로그램이 같은 Supabase 서버(`mnsuebexlzhvomxhrear`)와 같은 아이디를 씁니다. 자세한 내용은 [제작자관리 사용매뉴얼 (PDF)](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf).
 
-- **켜는 법:** ① Supabase 프로젝트 생성 → ② SQL Editor에서 [`server/supabase_setup.sql`](server/supabase_setup.sql) 실행(제작자 이메일 한 곳 수정) → ③ [`auth-config.json`](auth-config.json)에 Project URL · anon public 키 입력, `"enabled": true` → ④ 앱에서 제작자 이메일로 가입하면 자동으로 **제작자(owner)**.
-- **끄는 법:** `auth-config.json` 의 `"enabled": false` — 다음 실행부터 로그인 없이 예전처럼 사용.
-- **관리자 페이지:** 상단 "내 계정" 카드 › 관리자 페이지 — 가입 승인, 접속 차단/해제, 사용기한, 임시 비밀번호, 강제 로그아웃, 관리자 지정(제작자만), 계정 삭제, 접속기록, 기기별 차단, 관리작업 기록, 앱 전체 잠금(점검 모드).
-- **비밀번호는 암호화(bcrypt) 저장** — 제작자도 볼 수 없습니다(개인정보 안전성 확보조치 기준). 대신 임시 비밀번호 발급 → 다음 로그인 때 변경 강제.
-- **여러 기기 동기화:** 요율 설정 · 작성 중 견적 · 견적 보관함 · 화면 테마 · 견적 담당이 계정에 저장되어 자택 PC · 회사 PC · 휴대폰 · 태블릿에서 같게 보입니다.
-- anon public 키는 공개돼도 되는 키입니다. **service_role 키는 절대 저장소·앱에 넣지 마세요.**
+- **현재 상태:** [`auth-config.json`](auth-config.json) `"enabled": true` — 통합 서버에 연결되어 로그인이 켜져 있습니다.
+- **서버 SQL:** 통합 서버의 SQL은 Attendance-Management-Software(`supabase_setup.sql`) → S-Tec-Complaint-Response-System(`supabase_app_access.sql`) → 메인 저장소(`supabase_integrated.sql` · `supabase_devices_v2.sql` · `supabase_master.sql` · `supabase_backup.sql`)에서 관리합니다.
+- ⚠ **이 저장소의 [`server/supabase_setup.sql`](server/supabase_setup.sql)은 통합 전 단독 서버용입니다. 통합 서버에 실행하지 마세요** (새 기기 승인 · 조회 전용 기능의 서버 함수를 옛 버전으로 덮어씀).
+- **관리자 페이지:** 상단 "내 계정" 카드 › 관리자 페이지 — 가입 승인, 접속 차단/해제, 사용기한, 임시 비밀번호, 강제 로그아웃, 관리자 지정(제작자만), 계정 삭제, 접속기록, 기기별 차단, 관리작업 기록, 앱 전체 잠금, **🔐 프로그램별 권한**.
+- **비밀번호는 암호화(bcrypt) 저장** — 제작자도 볼 수 없습니다. 대신 임시 비밀번호 발급 → 다음 로그인 때 변경 강제.
+- **여러 기기 동기화:** 요율 설정 · 작성 중 견적 · 견적 보관함 · 화면 테마 · 견적 담당이 계정에 저장되어 어느 기기에서나 같게 보입니다.
+- **개별 앱(APK)은 2026-12-18까지** — 이후에는 통합 앱 「S-Tec Operations」으로 사용합니다.
+- publishable(anon) 키는 공개돼도 되는 키입니다. **service_role 키는 절대 저장소·앱에 넣지 마세요.**
 
 ## 산출 방식
 
@@ -83,6 +87,7 @@
 
 ## 변경 이력
 
+- **v1.5.2** (2026-11-19) — 에스텍 통합 로그인(SSO) · 「메인」 버튼 · 프로그램별 권한 · 새 기기 승인 · 조회 전용 기기 · 공통 기준정보 「📂 자료」가 들어간 현재 버전으로 HTML·APK 재빌드, 사용매뉴얼·제작자관리 사용매뉴얼 개정(Word·PPT·PDF). ※ server/supabase_setup.sql 은 통합 전 단독 서버용 — 통합 서버에는 실행하지 말 것
 - **v1.5.1** (2026-11-18) — 메인 영상을 새로 받은 11편으로 교체(H.264로 다시 인코딩해 PC·안드로이드 모두 재생), 에스텍 통합 로그인(SSO) 연결 내용 포함, 안드로이드 APK v1.5.1
 - **v1.5.0** (2026-11-04) — 제작자 관리 기능: 로그인·가입 승인제, 접속 차단/해제, 사용기한, 임시 비밀번호(비밀번호는 암호화 저장), 강제 로그아웃, 접속기록·기기 관리·관리작업 기록, 앱 전체 잠금, 하나의 아이디로 여러 기기 기록 동기화 (안드로이드 APK는 v1.4.0 유지 — 서명 키로 재빌드 필요)
 - **v1.4.0** (2026-11-04) — 근무 날짜를 달력에서 월별로 직접 지정(일요일·공휴일·대체공휴일 자동 휴일 → 일반직 휴일가산 자동, 회사 지정 휴일·토요일 휴일 옵션), 같은 업종 항목에 "＋ 조건 추가"(남·여, 인원, 수당, 장비, 날짜별 인원 차이), 사용 매뉴얼 개정
@@ -94,7 +99,7 @@
 ## 폴더 구성
 
 ```
-index.html      웹 버전 (GitHub Pages 시작 화면, 최신 v1.5.0)
+index.html      웹 버전 (GitHub Pages 시작 화면, 최신 v1.5.2)
 auth-config.json 로그인 서버 연결 설정 (제작자가 수정)
 server/         Supabase 서버 설정 SQL
 releases/       버전별 HTML · APK

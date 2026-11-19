@@ -1,13 +1,16 @@
 {
-  "version": "1.5.1",
-  "date": "2026-11-18",
-  "note": "메인 영상 11편으로 교체 (영업 PT 2 · 보안 현장 통제 · 설비 점검 추가) · 에스텍 통합 로그인(SSO) 연결 반영",
-  "html": "releases/S-Tec_short_estimate_v1.5.1.html",
-  "apk": "releases/S-Tec_short_estimate_v1.5.1.apk",
+  "version": "1.5.2",
+  "date": "2026-11-19",
+  "note": "에스텍 통합 로그인(SSO) · 「메인」 버튼 · 프로그램별 권한 · 새 기기 승인 · 조회 전용 기기 · 공통 기준정보 「📂 자료」 반영, 메인 영상 11편",
+  "html": "releases/S-Tec_short_estimate_v1.5.2.html",
+  "apk": "releases/S-Tec_short_estimate_v1.5.2.apk",
   "manual": {
-    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.docx",
-    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.0.pptx",
-    "admin_docx": "docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.0.docx"
+    "docx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx",
+    "pdf": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pdf",
+    "pptx": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx",
+    "pptx_pdf": "docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2_슬라이드.pdf",
+    "admin_docx": "docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.docx",
+    "admin_pdf": "docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf"
   },
   "server_sql": "server/supabase_setup.sql",
   "auth_config": "auth-config.json"
