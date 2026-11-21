@@ -16,9 +16,8 @@
 
 | 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx) | |
 | 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx) | |
-| 제작자 관리 사용매뉴얼 | [docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.docx](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.docx) | |
+| 제작자 관리 사용매뉴얼 | 제작자 계정에서만(「📘 사용자 매뉴얼 → 🛡 제작자 관리매뉴얼」) | |
 | 사용 매뉴얼 (PDF) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pdf](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pdf) · [슬라이드 PDF](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2_슬라이드.pdf) | |
-| 제작자 관리 사용매뉴얼 (PDF) | [docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf) | |
 
 - **웹 버전 주소를 열려면** 저장소 Settings › Pages › Branch를 `main` / `/(root)` 로 한 번 켜야 합니다.
 - **안드로이드 설치:** APK 내려받기 → "출처를 알 수 없는 앱 설치 허용" → 설치. Play 프로텍트 경고가 뜨면 "무시하고 설치".
@@ -27,7 +26,7 @@
 
 ## 제작자 관리 · 에스텍 통합 로그인
 
-로그인 · 사용 권한 · 관리자 페이지 · 여러 기기 동기화. **에스텍 통합 로그인(SSO)** — 메인 프로그램(S-Tec Operations and Sales Integrated Management System)과 8개 프로그램이 같은 Supabase 서버(`mnsuebexlzhvomxhrear`)와 같은 아이디를 씁니다. 자세한 내용은 [제작자관리 사용매뉴얼 (PDF)](docs/S-Tec_short_estimate_제작자관리_사용매뉴얼_v1.5.2.pdf).
+로그인 · 사용 권한 · 관리자 페이지 · 여러 기기 동기화. **에스텍 통합 로그인(SSO)** — 메인 프로그램(S-Tec Operations and Sales Integrated Management System)과 8개 프로그램이 같은 Supabase 서버(`mnsuebexlzhvomxhrear`)와 같은 아이디를 씁니다. 자세한 내용은 제작자 관리매뉴얼(제작자 계정에서만 열람)을 참고하세요.
 
 - **현재 상태:** [`auth-config.json`](auth-config.json) `"enabled": true` — 통합 서버에 연결되어 로그인이 켜져 있습니다.
 - **서버 SQL:** 통합 서버의 SQL은 Attendance-Management-Software(`supabase_setup.sql`) → S-Tec-Complaint-Response-System(`supabase_app_access.sql`) → 메인 저장소(`supabase_integrated.sql` · `supabase_devices_v2.sql` · `supabase_master.sql` · `supabase_backup.sql`)에서 관리합니다.
