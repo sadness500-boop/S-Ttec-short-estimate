@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0b1757">
-<meta name="app-version" content="1.5.2">
+<meta name="app-version" content="1.5.3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="S-Tec short estimate">
@@ -3131,8 +3131,8 @@ break;case"<bookViews":;case"<bookViews>":;case"</bookViews>":break;case"<workbo
    S-Tec short estimate  —  에스텍 단기인력 견적시스템
    Designed & Developed by Rat Rae Choi
    ===================================================================== */
-const APP = Object.freeze({ name:'S-Tec short estimate', ko:'에스텍 단기인력 견적시스템', version:'1.5.2', build:'2026-11-19', author:'Rat Rae Choi', org:'에스텍',
-  webUrl:'https://sadness500-boop.github.io/S-Ttec-short-estimate/', apkUrl:'https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.2.apk', repo:'https://github.com/sadness500-boop/S-Ttec-short-estimate' });
+const APP = Object.freeze({ name:'S-Tec short estimate', ko:'에스텍 단기인력 견적시스템', version:'1.5.3', build:'2026-11-22', author:'Rat Rae Choi', org:'에스텍',
+  webUrl:'https://sadness500-boop.github.io/S-Ttec-short-estimate/', apkUrl:'https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.3.apk', repo:'https://github.com/sadness500-boop/S-Ttec-short-estimate' });
 const OLD_WEB = 'https://claude.ai/artifact/XPSMAHxGPbc6B4aeowRPCC';
 const CREATOR = 'Rat Rae Choi';
 const IS_APP = !!(window.Capacitor && (typeof window.Capacitor.isNativePlatform!=='function' || window.Capacitor.isNativePlatform()));
@@ -3943,7 +3943,7 @@ function renderSettings(){
   ['Name','Ceo','Biz','Addr','Tel','Fax','Valid'].forEach(k=>$('c'+k).value=S.company[k.toLowerCase()]||'');
   $('uWeb').value=S.urls.web||''; $('uApk').value=S.urls.apk||'';
   $('about').innerHTML=`<b>${APP.name}</b> <span class="tag">v${APP.version}</span> · 빌드 ${APP.build}<br>${APP.ko} · ${IS_APP?'안드로이드 앱':'웹(HTML) 버전'}<br>
-    <span style="color:var(--muted)">v1.5.2 (2026-11-19) 에스텍 통합 로그인(SSO) · 「메인」 버튼 · 프로그램별 권한 · 새 기기 승인 · 조회 전용 기기 · 공통 기준정보 「📂 자료」<br>v1.5.1 (2026-11-18) 메인 영상 11편으로 교체<br>v1.4.0 (2026-11-04) 근무 날짜를 달력에서 월별로 직접 지정(일요일·공휴일·대체공휴일 자동 휴일 판정 → 일반직 휴일가산 자동 계산, 회사 지정 휴일·토요일 휴일 옵션), 같은 업종 항목에 "+ 조건 추가"(남·여, 인원, 수당, 장비, 날짜별 차이를 빠르게 추가), 사용 매뉴얼 개정<br>v1.3.0 (2026-11-04) S-Tec 브랜드 로고 4종을 화면 제일 하단으로 이동, 영상 전환 시 검은 화면 없이 모자이크·스르륵(디졸브) 전환 효과, 영상 2편 추가(집회·시위 경호, 시설관리 — 총 9편), 사용 매뉴얼(Word·PPT)<br>v1.2.0 (2026-11-04) 상단 S-Tec 글자 로고 삭제, S-Tec 로고 4종(월 사인·쇼케이스·가든 사인·일렉트릭 큐브) 디자인 반영, 업종 소독·방역·방제 추가, 장비·장구 대여비(경호·미화 탑승식·소독방역방제·지게차·사다리차·스카이차 등 28종, 인터넷 시세 기본값) 선택 산정, 메인 영상 다음 6개 영상 순서 재생, GitHub 저장소 배포<br>v1.1.0 (2026-11-04) 프로그램명 S-Tec short estimate·버전 표기, 상단 견적 담당(미지정 시 잠금)·다운로드 QR·친구 추천·주간/야간/시스템 화면, 앱 아이콘을 누르면 메인, 견적 작성·견적서·요율 설정을 메인 중앙 탭으로 이동, S-Tec 로고·큐브 디자인, 견적서 상호 "에스텍", 에스텍시스템 요율 기본 적용, 안드로이드 앱(APK)<br>v1.0.0 (2026-11-03) 최초 버전 — 시간·시급·각종수당·4대보험·관리손익 견적 산출, 업종·비용 계산 기준, 견적서·Excel</span><br>
+    <span style="color:var(--muted)">v1.5.3 (2026-11-22) 공통 상단 버튼(사용자 매뉴얼 · 내 정보 · QR · 친구추천 · 화면 크기 · 테마 · 관리 콘솔) · 회사·조직별 공개 잠금 · 제안서 제작시스템 연동 「📑 제안서로 보내기」 · 에스텍 그룹 기준 사업장 목록 · 글씨체·크기 통일<br>v1.5.2 (2026-11-19) 에스텍 통합 로그인(SSO) · 「메인」 버튼 · 프로그램별 권한 · 새 기기 승인 · 조회 전용 기기 · 공통 기준정보 「📂 자료」<br>v1.5.1 (2026-11-18) 메인 영상 11편으로 교체<br>v1.4.0 (2026-11-04) 근무 날짜를 달력에서 월별로 직접 지정(일요일·공휴일·대체공휴일 자동 휴일 판정 → 일반직 휴일가산 자동 계산, 회사 지정 휴일·토요일 휴일 옵션), 같은 업종 항목에 "+ 조건 추가"(남·여, 인원, 수당, 장비, 날짜별 차이를 빠르게 추가), 사용 매뉴얼 개정<br>v1.3.0 (2026-11-04) S-Tec 브랜드 로고 4종을 화면 제일 하단으로 이동, 영상 전환 시 검은 화면 없이 모자이크·스르륵(디졸브) 전환 효과, 영상 2편 추가(집회·시위 경호, 시설관리 — 총 9편), 사용 매뉴얼(Word·PPT)<br>v1.2.0 (2026-11-04) 상단 S-Tec 글자 로고 삭제, S-Tec 로고 4종(월 사인·쇼케이스·가든 사인·일렉트릭 큐브) 디자인 반영, 업종 소독·방역·방제 추가, 장비·장구 대여비(경호·미화 탑승식·소독방역방제·지게차·사다리차·스카이차 등 28종, 인터넷 시세 기본값) 선택 산정, 메인 영상 다음 6개 영상 순서 재생, GitHub 저장소 배포<br>v1.1.0 (2026-11-04) 프로그램명 S-Tec short estimate·버전 표기, 상단 견적 담당(미지정 시 잠금)·다운로드 QR·친구 추천·주간/야간/시스템 화면, 앱 아이콘을 누르면 메인, 견적 작성·견적서·요율 설정을 메인 중앙 탭으로 이동, S-Tec 로고·큐브 디자인, 견적서 상호 "에스텍", 에스텍시스템 요율 기본 적용, 안드로이드 앱(APK)<br>v1.0.0 (2026-11-03) 최초 버전 — 시간·시급·각종수당·4대보험·관리손익 견적 산출, 업종·비용 계산 기준, 견적서·Excel</span><br>
     <b style="font-family:Roboto,sans-serif;font-style:italic">Designed &amp; Developed by ${CREATOR}</b>`;
   updInsSum(); bindSettings();
 }

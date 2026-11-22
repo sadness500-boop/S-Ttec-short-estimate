@@ -2,7 +2,7 @@
 
 <img src="icons/app-icon-512.png" width="96" alt="S-Tec short estimate 앱 아이콘">
 
-**에스텍 단기인력 견적시스템** · v1.5.2
+**에스텍 단기인력 견적시스템** · v1.5.3
 
 보안 · 미화 · 주차 · 시설 · 경호 · 소독 · 방역 · 방제 · 기타 단기 인력 견적을 근무시간과 시급만 넣으면 자동으로 산출합니다. 웹(HTML) 버전과 안드로이드 앱(APK)으로 씁니다.
 
@@ -11,8 +11,8 @@
 | 구분 | 파일 | 주소 |
 |---|---|---|
 | 웹 버전 | [index.html](index.html) | https://sadness500-boop.github.io/S-Ttec-short-estimate/ |
-| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.2.html](releases/S-Tec_short_estimate_v1.5.2.html) | |
-| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.2.apk](releases/S-Tec_short_estimate_v1.5.2.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.2.apk |
+| 웹 버전 (버전별) | [releases/S-Tec_short_estimate_v1.5.3.html](releases/S-Tec_short_estimate_v1.5.3.html) | |
+| 안드로이드 앱 | [releases/S-Tec_short_estimate_v1.5.3.apk](releases/S-Tec_short_estimate_v1.5.3.apk) | https://github.com/sadness500-boop/S-Ttec-short-estimate/raw/main/releases/S-Tec_short_estimate_v1.5.3.apk |
 
 | 사용 매뉴얼 (Word) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.docx) | |
 | 사용 매뉴얼 (PPT) | [docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx](docs/S-Tec_short_estimate_사용매뉴얼_v1.5.2.pptx) | |
@@ -86,6 +86,7 @@
 
 ## 변경 이력
 
+- **v1.5.3** (2026-11-22) — 공통 상단 버튼 · 회사·조직별 공개 잠금 · 제안서 제작시스템 연동 · 에스텍 그룹 기준 사업장 목록 · 글씨체·크기 통일이 들어간 현재 버전으로 PC HTML · 안드로이드 APK 재빌드
 - **v1.5.2** (2026-11-19) — 에스텍 통합 로그인(SSO) · 「메인」 버튼 · 프로그램별 권한 · 새 기기 승인 · 조회 전용 기기 · 공통 기준정보 「📂 자료」가 들어간 현재 버전으로 HTML·APK 재빌드, 사용매뉴얼·제작자관리 사용매뉴얼 개정(Word·PPT·PDF). ※ server/supabase_setup.sql 은 통합 전 단독 서버용 — 통합 서버에는 실행하지 말 것
 - **v1.5.1** (2026-11-18) — 메인 영상을 새로 받은 11편으로 교체(H.264로 다시 인코딩해 PC·안드로이드 모두 재생), 에스텍 통합 로그인(SSO) 연결 내용 포함, 안드로이드 APK v1.5.1
 - **v1.5.0** (2026-11-04) — 제작자 관리 기능: 로그인·가입 승인제, 접속 차단/해제, 사용기한, 임시 비밀번호(비밀번호는 암호화 저장), 강제 로그아웃, 접속기록·기기 관리·관리작업 기록, 앱 전체 잠금, 하나의 아이디로 여러 기기 기록 동기화 (안드로이드 APK는 v1.4.0 유지 — 서명 키로 재빌드 필요)
@@ -98,7 +99,7 @@
 ## 폴더 구성
 
 ```
-index.html      웹 버전 (GitHub Pages 시작 화면, 최신 v1.5.2)
+index.html      웹 버전 (GitHub Pages 시작 화면, 최신 v1.5.3)
 auth-config.json 로그인 서버 연결 설정 (제작자가 수정)
 server/         Supabase 서버 설정 SQL
 releases/       버전별 HTML · APK
